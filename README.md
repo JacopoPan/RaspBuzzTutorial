@@ -153,3 +153,7 @@ land mavros
 
 
 - launch xbeemav+rosbuzz on both devices: they should not crash and you should see their xbee blinking (for more debug prints enable the debug mode from the launch file: you will get RAB when a msg is received)
+
+
+https://www.hq.nasa.gov/alsj/a11/a11trans.html
+https://www.hq.nasa.gov/alsj/a11/a11transscript_cm.pdf
