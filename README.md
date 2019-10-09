@@ -1,6 +1,12 @@
 # RaspBuzzTutorial
 
+update in forked ROSBuzz
+buzz.bzz
+neil.bzz
 
+references: me, benjamin
+david, vivek
+giovanni, carlo
 
 
 OLD https://ubuntu-pi-flavour-maker.org/download/ + http://wiki.ros.org/kinetic/Installation/Ubuntu
