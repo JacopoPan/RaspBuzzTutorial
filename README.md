@@ -172,8 +172,8 @@ and add a new line in the form:
 
 # Step 4: Run a 2-device demo
 
-- Perform steps 1-3 on two Raspberry Pi 3 Model B+
-- Connect each to a Digi XBee SX (e.g., again using an interface board and USB)
+- Perform steps 1-3 on 2 Raspberry Pi 3 Model B+
+- Connect each of the 2 Pis to a Digi XBee SX (e.g., again using an interface board and USB)
 
 If you are using the sources from `https://github.com/JacopoPan/ROSBuzz` you can run
 
@@ -199,6 +199,7 @@ broadcast/listen
 https://the.swarming.buzz/wiki/doku.php?id=buzz_syntax_cheatsheet
 
 
-> prepare a launch file forcing both device gps position (since you have no localisation) as we do for the groundstation (look in its launch file on github to see how)
-> Reset if xbee goes to sleep
+> Note: files `ROSBuzz/launch/buzz.launch` and `ROSBuzz/launch/neil.launch` contain lines `<arg name="latitude" value="45.0"/>` and `<arg name="longitude" value="73.0"/>` to set "fake" latitude and longitude positions that would prevent ROSBuzz/XBeeMav from working as expected, if missing. Line `<arg name="script" value="script-name"/>` defines which of the scripts in `ROSBuzz/buzz_scripts` is executed.
+
+> Troubleshooting: if the XBee module becomes irresponsive, press the reset buttonon the inteface board.
 
