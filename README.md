@@ -191,8 +191,8 @@ on the second one. The two devices will re-enact a brief 5-line exchanges from [
 
 Look at files `ROSBuzz/buzz_scripts/neil.bzz` and `ROSBuzz/buzz_scripts/buzz.bzz` to understand how the communication happens. The message passing is base on two different paradigms:
 
-- broadcast/listen - each Raspberry Pi `broadcast` messages as (key, value) pairs and `listen` to certain keys
-- stigmergy - each Raspberry Pi reads and write into a virtual dictionry containing (key, value) pairs
+- `broadcast`/`listen` - each Raspberry Pi `broadcast` messages as (key, value) pairs and `listen` to certain keys
+- `stigmergy` - each Raspberry Pi reads and write into a virtual dictionary containing (key, value) pairs
 
 More examples on the use of the Buzz language are available in its [wiki](https://the.swarming.buzz/wiki/doku.php?id=buzz_syntax_cheatsheet)
 
