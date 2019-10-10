@@ -27,14 +27,29 @@ For additional information on [Buzz](https://github.com/MISTLab/Buzz/) contact
 # Step 1: Prepare the XBee modules
 
 Get the XBee configuration profile.
+
 ```
-git clone https://github.com/JacopoPan/RaspBuzzTutorial.git
-cd RaspBuzzTutorial
+$ git clone https://github.com/JacopoPan/RaspBuzzTutorial.git
+$ cd RaspBuzzTutorial/
 ```
 
-To set the right profile on the Xbee, you should install XCTU on your computer (https://www.digi.com/products/xbee-rf-solutions/xctu-software/xctu#productsupport-utilities).
-Using this software, you can load the profile from one of the files provided in the spiri-resources repo (http://git.mistlab.ca/bramtoula/spiri-resources.git) in the  `xbees`folder.
-We have one file for the Xbee PRO model « profile_8074.xpro », and one for the Xbee SX « xbee sx.xpro ».
+File `profile_A007_sseac.xpro` in folder `RaspBuzzTutorial` can be uploaded to each of your [XBee SX 868](https://www.digi.com/products/embedded-systems/digi-xbee/rf-modules/sub-1-ghz-modules/digi-xbee-sx-868) radios by following these steps:
+
+- install Digi's [XCTU](https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu#productsupport-utilities) (tested with XCTU 6.4.3 on OS X Mojave and Ubuntu 16.04)
+- connect your XBee SX 868 to the machine running XCTU through USB (using, for example, the interface board included in the development kit, part: [XK8X-DMS-0](https://www.digikey.com/product-detail/en/digi-international/XK8X-DMS-0/602-2117-ND/))
+- click the second icon from the top left of XCTU, "Discover radio modules connected to your machine"
+- select the appropriate ports (e.g. usbserial-XXXX) and "Next >"
+- **if the SX 868 is brand new**, leave the default "Set port parameters"
+- **if the SX 868 was previously configured with this profile**, set port parameters to `Baud rate: 230400; Data bits: 8; Parity: None; Stop Bits: 1; Flow control: None`
+- click "Finish"
+- once found, thick and choose "Add selected devices"
+- select the device on the left panel of XCTU
+- on the right panel, locate the arrow besides the "Profile" icon
+- click it and select "Apply configuration profile"
+- navigate to file `profile_A007_sseac.xpro`, click "Open"
+- the profile will be loaded to the SX 868
+
+A profile for the XBee PRO is also available in this [repository](http://git.mistlab.ca/bramtoula/spiri-resources.git)
 
 # Step 2: Prepare the Raspberry Pi  3s
 
