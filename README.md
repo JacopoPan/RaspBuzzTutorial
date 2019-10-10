@@ -1,13 +1,10 @@
 # RaspBuzzTutorial
 
 The objective of this tutorial is to show how one can use jointly use:
-
 - the [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/),
 - the [Buzz scripting language](https://the.swarming.buzz/wiki/),
 - the [Robotic Operating Systems](https://www.ros.org/about-ros/) (ROS)
 - and, [Digi XBee SX 868](https://www.digi.com/products/embedded-systems/digi-xbee/rf-modules/sub-1-ghz-modules/digi-xbee-sx-868) RF modules
-
-
 as a simple, customizable, and low-cost platform for multi-robot systems and IoT applications.
 
 # Main steps
