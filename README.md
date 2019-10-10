@@ -38,8 +38,7 @@ File `profile_A007_sseac.xpro` in folder `RaspBuzzTutorial` should be uploaded t
 2. connect your XBee SX 868 to the machine running XCTU through USB (using, for example, the interface board included in the development kit, part: [XK8X-DMS-0](https://www.digikey.com/product-detail/en/digi-international/XK8X-DMS-0/602-2117-ND/))
 3. click the second icon from the top left of XCTU's interface, "Discover radio modules connected to your machine"
 4. select the appropriate ports (e.g., usbserial-XXXX) and "Next >"
-5. a) **if the SX 868 is brand new**, leave the default "Set port parameters"
-5. b) **if the SX 868 was previously configured with this profile**, set port parameters to `Baud rate: 230400; Data bits: 8; Parity: None; Stop Bits: 1; Flow control: None`
+5. **if the SX 868 is brand new**, leave the default "Set port parameters"; **if the SX 868 was previously configured with this profile**, set port parameters to `Baud rate: 230400; Data bits: 8; Parity: None; Stop Bits: 1; Flow control: None`
 6. click "Finish"
 7. once found, tick the device(s) and click "Add selected devices"
 8. select the devices (one by one) on the left panel of XCTU
