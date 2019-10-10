@@ -188,7 +188,7 @@ Look at files `ROSBuzz/buzz_scripts/neil.bzz` and `ROSBuzz/buzz_scripts/buzz.bzz
 - `broadcast`/`listen` - each Raspberry Pi `broadcast` messages as (key, value) pairs and `listen` to specific keys
 - `stigmergy` - each Raspberry Pi reads and write into a virtual dictionary containing multiple (key, value) pairs
 
-More examples on the use of the Buzz language are available in its [wiki](https://the.swarming.buzz/wiki/doku.php?id=buzz_syntax_cheatsheet)
+More examples on the use of the Buzz language are available in its [wiki](https://the.swarming.buzz/wiki/doku.php?id=buzz_syntax_cheatsheet).
 
 > Note: files `ROSBuzz/launch/buzz.launch` and `ROSBuzz/launch/neil.launch` contain lines `<arg name="latitude" value="45.0"/>` and `<arg name="longitude" value="73.0"/>` to set "fake" latitude and longitude positions that, if missing, would prevent ROSBuzz/XBeeMav from working as expected. Line `<arg name="script" value="script-name"/>` defines which of the scripts in `ROSBuzz/buzz_scripts` is executed.
 
