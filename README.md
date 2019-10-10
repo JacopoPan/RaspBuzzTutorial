@@ -53,6 +53,28 @@ A profile for the XBee PRO is also available in this [repository](http://git.mis
 
 # Step 2: Prepare the Raspberry Pi  3s
 
+We now want to install our Raspberry Pi 3 Model B+ with ROS Kinetik Kame. While this can be done in multiple ways (e.g. [with Raspian](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi) or using [Ubuntu Mate](https://ubuntu-pi-flavour-maker.org/download/) and the [traditional ROS instructions](http://wiki.ros.org/kinetic/Installation/Ubuntu)), the simplest one is probably to use one of the pre-installed images made available by [Ubiquity Robotics](https://downloads.ubiquityrobotics.com/pi.html).
+
+- [format your Raspberry Pi's SD card ](https://www.sdcard.org/downloads/formatter/) (if necessary)
+- flash Ubiquity's image to the card using [Etcher](https://www.balena.io/etcher/)
+
+To avoid certificates validity issues when connecting to the internet, after booting the Raspberry Pi for the first time open a terminal (CTRL+ALT+T) and type 
+
+```
+$ sudo crontab -e
+```
+
+select your preferred text editor (i.e., `vim`) and add line
+
+```
+@reboot date -s "20 JUL 2019 20:17:00"
+```
+
+save and close. Reboot.
+
+Before moving to the next step, install these additional ROS packages:
+`sudo apt-get install ros-kinetic-mavros* ros-kinetic-tf2-geometry-msgs ros-kinetic-image-transport ros-kinetic-cv-bridge libjson-glib-dev`
+
 # Step 3: Install the relevant repositories
 
 # Step 4: Run a 2-device demo
