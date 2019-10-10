@@ -8,6 +8,10 @@ references: me, benjamin
 david, vivek
 giovanni, carlo
 
+```
+git clone
+cd 
+```
 
 OLD https://ubuntu-pi-flavour-maker.org/download/ + http://wiki.ros.org/kinetic/Installation/Ubuntu
 OLD http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi
