@@ -1,6 +1,6 @@
 # RaspBuzzTutorial
 
-The objective of this tutorial is to show how one can use jointly use:
+The objective of this tutorial is to show the joint use of:
 
 - the [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/),
 - the [Buzz scripting language](https://the.swarming.buzz/wiki/),
@@ -11,49 +11,44 @@ as a simple, customizable, and low-cost platform for multi-robot systems and IoT
 
 # Main steps
 
-This tutorial contains 4 steps:
+The tutorial contains 4 steps:
 
-- prepare the XBee modules;
-- prepare the Raspberry Pi 3s;
-- install the relevant repositories;
-- run a 2-device demo.
+1. prepare the XBee modules;
+2. prepare the Raspberry Pi 3s;
+3. install the relevant repositories;
+4. run a 2-device demo.
 
-If you have further questions about this tutorial, contact <jacopo.panerati@robotics.utias.utoronto.ca> or <benjamin.ramtoula@polymtl.ca>
-
-If you have further questions about [ROSBuzz](https://github.com/MISTLab/ROSBuzz) or [XBeeMav](https://github.com/MISTLab/XbeeMav), contact 
-<david.st-onge@etsmtl.ca> or <vivek-shankar.varadharajan@polymtl.ca>
-
-If you have further questions about [Buzz](https://github.com/MISTLab/Buzz/), contact 
-<giovanni.beltrame@polymtl.ca> or <cpinciroli@wpi.edu>
+If you have further questions about this tutorial, contact <jacopo.panerati@robotics.utias.utoronto.ca> or <benjamin.ramtoula@polymtl.ca>.
+If you have further questions about [ROSBuzz](https://github.com/MISTLab/ROSBuzz) or [XBeeMav](https://github.com/MISTLab/XbeeMav), contact <david.st-onge@etsmtl.ca> or <vivek-shankar.varadharajan@polymtl.ca>. If you have further questions about [Buzz](https://github.com/MISTLab/Buzz/), contact <giovanni.beltrame@polymtl.ca> or <cpinciroli@wpi.edu>.
 
 
 
 # Step 1: Prepare the XBee modules
 
-Get the XBee configuration profile.
+Download our *ad hoc* XBee configuration profile.
 
 ```
 $ git clone https://github.com/JacopoPan/RaspBuzzTutorial.git
 $ cd RaspBuzzTutorial/
 ```
 
-File `profile_A007_sseac.xpro` in folder `RaspBuzzTutorial` can be uploaded to each of your [XBee SX 868](https://www.digi.com/products/embedded-systems/digi-xbee/rf-modules/sub-1-ghz-modules/digi-xbee-sx-868) radios by following these steps:
+File `profile_A007_sseac.xpro` in folder `RaspBuzzTutorial` should be uploaded to each of your [XBee SX 868](https://www.digi.com/products/embedded-systems/digi-xbee/rf-modules/sub-1-ghz-modules/digi-xbee-sx-868) radios using the following steps:
 
-- install Digi's [XCTU](https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu#productsupport-utilities) (tested with XCTU 6.4.3 on OS X Mojave and Ubuntu 16.04)
-- connect your XBee SX 868 to the machine running XCTU through USB (using, for example, the interface board included in the development kit, part: [XK8X-DMS-0](https://www.digikey.com/product-detail/en/digi-international/XK8X-DMS-0/602-2117-ND/))
-- click the second icon from the top left of XCTU's interface, "Discover radio modules connected to your machine"
-- select the appropriate ports (e.g., usbserial-XXXX) and "Next >"
-- **if the SX 868 is brand new**, leave the default "Set port parameters"
-- **if the SX 868 was previously configured with this profile**, set port parameters to `Baud rate: 230400; Data bits: 8; Parity: None; Stop Bits: 1; Flow control: None`
-- click "Finish"
-- once found, tick the device(s) and click "Add selected devices"
-- select the devices (one by one) on the left panel of XCTU
-- on the right panel, locate the small arrow besides the "Profile" icon
-- click it and select "Apply configuration profile"
-- navigate to file `profile_A007_sseac.xpro`, click "Open"
-- the profile will be loaded to the SX 868
+1. install Digi's [XCTU](https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu#productsupport-utilities) (tested with XCTU 6.4.3 on OS X Mojave and Ubuntu 16.04)
+2. connect your XBee SX 868 to the machine running XCTU through USB (using, for example, the interface board included in the development kit, part: [XK8X-DMS-0](https://www.digikey.com/product-detail/en/digi-international/XK8X-DMS-0/602-2117-ND/))
+3. click the second icon from the top left of XCTU's interface, "Discover radio modules connected to your machine"
+4. select the appropriate ports (e.g., usbserial-XXXX) and "Next >"
+5a. **if the SX 868 is brand new**, leave the default "Set port parameters"
+5b. **if the SX 868 was previously configured with this profile**, set port parameters to `Baud rate: 230400; Data bits: 8; Parity: None; Stop Bits: 1; Flow control: None`
+6. click "Finish"
+7. once found, tick the device(s) and click "Add selected devices"
+8. select the devices (one by one) on the left panel of XCTU
+9. on the right panel, locate the small arrow besides the "Profile" icon
+10. click it and select "Apply configuration profile"
+11. navigate to file `profile_A007_sseac.xpro`, click "Open"
+12. the profile will be loaded to the SX 868
 
-A profile for the XBee PRO is also available in this [repository](http://git.mistlab.ca/bramtoula/spiri-resources.git)
+A similar profile for the XBee PRO is also available in this [repository](http://git.mistlab.ca/bramtoula/spiri-resources.git)
 
 
 
@@ -64,7 +59,7 @@ We now want to install our Raspberry Pi 3 Model B+ with ROS Kinetik Kame. While 
 - [format your Raspberry Pi's SD card ](https://www.sdcard.org/downloads/formatter/) (if necessary)
 - flash Ubiquity's image to the card using [Etcher](https://www.balena.io/etcher/) or `gnome-disk-utility`
 
-To avoid certificates validity issues when connecting to the internet, after booting the Raspberry Pi for the first time open a terminal (CTRL+ALT+T) and type 
+To avoid certificates validity issues when connecting to the internet, after booting the Raspberry Pi for the first time open a terminal (Ctrl+Alt+t) and type 
 
 ```
 $ sudo crontab -e
