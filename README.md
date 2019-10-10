@@ -36,15 +36,15 @@ File `profile_A007_sseac.xpro` in folder `RaspBuzzTutorial` should be uploaded t
 
 1. install Digi's [XCTU](https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu#productsupport-utilities) (tested with XCTU 6.4.3 on OS X Mojave and Ubuntu 16.04)
 2. connect your XBee SX 868 to the machine running XCTU through USB (using, for example, the interface board included in the development kit, part: [XK8X-DMS-0](https://www.digikey.com/product-detail/en/digi-international/XK8X-DMS-0/602-2117-ND/))
-3. click the second icon from the top left of XCTU's interface, "Discover radio modules connected to your machine"
-4. select the appropriate ports (e.g., usbserial-XXXX) and "Next >"
+3. click on the second icon from the top left of XCTU's interface, "Discover radio modules connected to your machine"
+4. select all the appropriate ports (e.g., usbserial-XXXX) and "Next >"
 5. **if the SX 868 is brand new**, leave the default "Set port parameters"; **if the SX 868 was previously configured with this profile**, set port parameters to `Baud rate: 230400; Data bits: 8; Parity: None; Stop Bits: 1; Flow control: None`
-6. click "Finish"
-7. once found, tick the device(s) and click "Add selected devices"
+6. click on "Finish"
+7. once found, tick the device(s) and click on "Add selected devices"
 8. select the devices (one by one) on the left panel of XCTU
 9. on the right panel, locate the small arrow besides the "Profile" icon
 10. click it and select "Apply configuration profile"
-11. navigate to file `profile_A007_sseac.xpro`, click "Open"
+11. navigate to file `profile_A007_sseac.xpro`, click on "Open"
 12. the profile will be loaded to the SX 868
 
 A similar profile for the XBee PRO is also available in this [repository](http://git.mistlab.ca/bramtoula/spiri-resources.git)
@@ -53,24 +53,24 @@ A similar profile for the XBee PRO is also available in this [repository](http:/
 
 # Step 2: Prepare the Raspberry Pi  3s
 
-We now want to install our Raspberry Pi 3 Model B+ with ROS Kinetik Kame. While this can be done in multiple ways (e.g. [with Raspian](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi) or using [Ubuntu Mate](https://ubuntu-pi-flavour-maker.org/download/) and the [traditional ROS instructions](http://wiki.ros.org/kinetic/Installation/Ubuntu)), the simplest one is probably to use one of the pre-installed images made available by [Ubiquity Robotics](https://downloads.ubiquityrobotics.com/pi.html).
+We now need to install our Raspberry Pi 3 Model B+ with ROS Kinetik Kame. While this can be done in multiple ways (e.g., [with Raspian](http://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi) or using [Ubuntu Mate](https://ubuntu-pi-flavour-maker.org/download/) and the [traditional ROS installation instructions](http://wiki.ros.org/kinetic/Installation/Ubuntu)), the simplest one is probably to use one of the pre-installed images made available by [Ubiquity Robotics](https://downloads.ubiquityrobotics.com/pi.html).
 
 - [format your Raspberry Pi's SD card ](https://www.sdcard.org/downloads/formatter/) (if necessary)
 - flash Ubiquity's image to the card using [Etcher](https://www.balena.io/etcher/) or `gnome-disk-utility`
 
-To avoid certificates validity issues when connecting to the internet, after booting the Raspberry Pi for the first time open a terminal (Ctrl+Alt+t) and type 
+To avoid certificates validity issues when connecting to the internet, after booting the Raspberry Pi for the first time, open a terminal (`Ctrl`+`Alt`+`t`) and type:
 
 ```
 $ sudo crontab -e
 ```
 
-select your preferred text editor (i.e., `vim`) and add line
+Select your preferred text editor (i.e., `vim`) and add the following line:
 
 ```
 @reboot date -s "20 JUL 2019 20:17:00"
 ```
 
-save and close. Reboot. Before moving to the next step, install these additional ROS packages:
+Save and close. Reboot. Before moving to the next step, install these additional ROS packages:
 
 `sudo apt-get install ros-kinetic-mavros* ros-kinetic-tf2-geometry-msgs ros-kinetic-image-transport ros-kinetic-cv-bridge libjson-glib-dev`
 
@@ -78,11 +78,11 @@ save and close. Reboot. Before moving to the next step, install these additional
 
 # Step 3: Install the relevant repositories
 
-These are:
+The relevant repositories are those containing:
 
-- Buzz (containing the VM interpreting scripts using the Buzz language)
-- ROSBuzz (containing the ROS node running the Buzz VM)
-- XBeeMav (containing the ROS node allowing Buzz VMs on different Raspberry Pis to communicate through the XBee radios)
+- Buzz (i.e., the VM interpreting scripts using the Buzz language)
+- ROSBuzz (i.e., the ROS node running the Buzz VM)
+- XBeeMav (i.e., the ROS node allowing Buzz VMs on different Raspberry Pis to communicate through the XBee radios)
 
 ### Install Buzz
 
@@ -139,14 +139,14 @@ $ catkin_make -DSIM=0
 $ echo 'home/ubuntu/ROS_WS/devel/setup.bash' >> ~/.bashrc 
 ```
 
-Make sure you have the following files in your `~/.bashrc` file (add them otherwise) :
+Make sure that you have the following files in your `~/.bashrc` file (add them otherwise) :
 
 ```
 source /opt/ros/kinetic/setup.bash
 source home/ubuntu/ROS_WS/devel/setup.bash
 ```
 
-> Note: in this tutorial we are using forked versions of ROSBuzz and XBeeMav, for the most up-to-date sources, clone `https://github.com/MISTLab/ROSBuzz` and `https://github.com/MISTLab/XbeeMav` instead.
+> Note: in this tutorial we are using forked versions of `ROSBuzz` and `XBeeMav`, for the most up-to-date sources, clone `https://github.com/MISTLab/ROSBuzz` and `https://github.com/MISTLab/XbeeMav` instead.
 
 ### Adding a never-used-before XBee 
 
@@ -156,7 +156,7 @@ If you want to use an XBee radio that was never used before with `XBeeMav`, you 
 $ vim ~/ROS_WS/src/xbeemav/Resources/database.xml
 ```
 
-and add a new line in the form:
+and, for each new XBee module, add a new line in the form:
 
 ```
 <Device Address="[Integer-Id]">[MAC-Address]</Device>
@@ -166,16 +166,16 @@ and add a new line in the form:
 
 # Step 4: Run a 2-device demo
 
-- Perform steps 1-3 on 2 Raspberry Pi 3 Model B+
-- Connect each of the 2 Pis to a Digi XBee SX (e.g., again using an interface board and USB)
+- Perform steps 2-3 on 2 Raspberry Pi 3 Model B+
+- Connect each of the 2 Pis to a Digi XBee SX (e.g., again using an interface board and USB) loaded with the profile from step 1
 
-If you are using the sources from `https://github.com/JacopoPan/ROSBuzz` you can run
+Using the sources from `https://github.com/JacopoPan/ROSBuzz` you shuold run:
 
 ```
 $ roslaunch rosbuzz neil.launch
 ```
 
-on the first one and 
+on the first Raspberry Pi and:
 
 ```
 $ roslaunch rosbuzz buzz.launch
@@ -183,14 +183,14 @@ $ roslaunch rosbuzz buzz.launch
 
 on the second one. The two devices will re-enact a brief 5-line exchanges from the [Apollo 11 transcripts](https://www.hq.nasa.gov/alsj/a11/a11transscript_cm.pdf).
 
-Look at files `ROSBuzz/buzz_scripts/neil.bzz` and `ROSBuzz/buzz_scripts/buzz.bzz` to understand how the communication happens. The message passing is base on two different paradigms:
+Look at files `ROSBuzz/buzz_scripts/neil.bzz` and `ROSBuzz/buzz_scripts/buzz.bzz` to understand how the communication happens. The message passing is based on two different paradigms:
 
-- `broadcast`/`listen` - each Raspberry Pi `broadcast` messages as (key, value) pairs and `listen` to certain keys
-- `stigmergy` - each Raspberry Pi reads and write into a virtual dictionary containing (key, value) pairs
+- `broadcast`/`listen` - each Raspberry Pi `broadcast` messages as (key, value) pairs and `listen` to specific keys
+- `stigmergy` - each Raspberry Pi reads and write into a virtual dictionary containing multiple (key, value) pairs
 
 More examples on the use of the Buzz language are available in its [wiki](https://the.swarming.buzz/wiki/doku.php?id=buzz_syntax_cheatsheet)
 
-> Note: files `ROSBuzz/launch/buzz.launch` and `ROSBuzz/launch/neil.launch` contain lines `<arg name="latitude" value="45.0"/>` and `<arg name="longitude" value="73.0"/>` to set "fake" latitude and longitude positions that would prevent ROSBuzz/XBeeMav from working as expected, if missing. Line `<arg name="script" value="script-name"/>` defines which of the scripts in `ROSBuzz/buzz_scripts` is executed.
+> Note: files `ROSBuzz/launch/buzz.launch` and `ROSBuzz/launch/neil.launch` contain lines `<arg name="latitude" value="45.0"/>` and `<arg name="longitude" value="73.0"/>` to set "fake" latitude and longitude positions that, if missing, would prevent ROSBuzz/XBeeMav from working as expected. Line `<arg name="script" value="script-name"/>` defines which of the scripts in `ROSBuzz/buzz_scripts` is executed.
 
 > Troubleshooting: if an XBee module becomes irresponsive, press the reset button on the interface board.
 
