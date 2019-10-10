@@ -198,5 +198,5 @@ More examples on the use of the Buzz language are available in its [wiki](https:
 
 > Note: files `ROSBuzz/launch/buzz.launch` and `ROSBuzz/launch/neil.launch` contain lines `<arg name="latitude" value="45.0"/>` and `<arg name="longitude" value="73.0"/>` to set "fake" latitude and longitude positions that would prevent ROSBuzz/XBeeMav from working as expected, if missing. Line `<arg name="script" value="script-name"/>` defines which of the scripts in `ROSBuzz/buzz_scripts` is executed.
 
-> Troubleshooting: if an XBee module becomes irresponsive, press the reset buttonon the inteface board.
+> Troubleshooting: if an XBee module becomes irresponsive, press the reset button on the interface board.
 
