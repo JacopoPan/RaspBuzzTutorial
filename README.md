@@ -187,7 +187,7 @@ on the first one and
 $ roslaunch rosbuzz buzz.launch
 ```
 
-on the second one. The two devices will re-enact a brief 5-line exchanges from [Apollo 11 transcripts](https://www.hq.nasa.gov/alsj/a11/a11transscript_cm.pdf).
+on the second one. The two devices will re-enact a brief 5-line exchanges from the [Apollo 11 transcripts](https://www.hq.nasa.gov/alsj/a11/a11transscript_cm.pdf).
 
 Look at files `ROSBuzz/buzz_scripts/neil.bzz` and `ROSBuzz/buzz_scripts/buzz.bzz` to understand how the communication happens. The message passing is base on two different paradigms:
 
