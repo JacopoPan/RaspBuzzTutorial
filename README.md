@@ -189,17 +189,14 @@ $ roslaunch rosbuzz buzz.launch
 
 on the second one. The two devices will re-enact a brief 5-line exchanges from [Apollo 11 transcripts](https://www.hq.nasa.gov/alsj/a11/a11transscript_cm.pdf).
 
+Look at files `ROSBuzz/buzz_scripts/neil.bzz` and `ROSBuzz/buzz_scripts/buzz.bzz` to understand how the communication happens. The message passing is base on two different paradigms:
 
+- broadcast/listen - each Raspberry Pi `broadcast` messages as (key, value) pairs and `listen` to certain keys
+- stigmergy - each Raspberry Pi reads and write into a virtual dictionry containing (key, value) pairs
 
-
-stigmergy
-
-broadcast/listen
-
-https://the.swarming.buzz/wiki/doku.php?id=buzz_syntax_cheatsheet
-
+More examples on the use of the Buzz language are available in its [wiki](https://the.swarming.buzz/wiki/doku.php?id=buzz_syntax_cheatsheet)
 
 > Note: files `ROSBuzz/launch/buzz.launch` and `ROSBuzz/launch/neil.launch` contain lines `<arg name="latitude" value="45.0"/>` and `<arg name="longitude" value="73.0"/>` to set "fake" latitude and longitude positions that would prevent ROSBuzz/XBeeMav from working as expected, if missing. Line `<arg name="script" value="script-name"/>` defines which of the scripts in `ROSBuzz/buzz_scripts` is executed.
 
-> Troubleshooting: if the XBee module becomes irresponsive, press the reset buttonon the inteface board.
+> Troubleshooting: if an XBee module becomes irresponsive, press the reset buttonon the inteface board.
 
