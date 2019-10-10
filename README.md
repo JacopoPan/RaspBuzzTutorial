@@ -168,4 +168,37 @@ and add a new line in the form:
 <Device Address="[Integer-Id]">[MAC-Address]</Device>
 ```
 
+
+
 # Step 4: Run a 2-device demo
+
+- Perform steps 1-3 on two Raspberry Pi 3 Model B+
+- Connect each to a Digi XBee SX (e.g., again using an interface board and USB)
+
+If you are using the sources from `https://github.com/JacopoPan/ROSBuzz` you can run
+
+```
+$ roslaunch rosbuzz neil.launch
+```
+
+on the first one and 
+
+```
+$ roslaunch rosbuzz buzz.launch
+```
+
+on the second one. The two devices will re-enact a brief 5-line exchanges from [Apollo 11 transcripts](https://www.hq.nasa.gov/alsj/a11/a11transscript_cm.pdf).
+
+
+
+
+stigmergy
+
+broadcast/listen
+
+https://the.swarming.buzz/wiki/doku.php?id=buzz_syntax_cheatsheet
+
+
+> prepare a launch file forcing both device gps position (since you have no localisation) as we do for the groundstation (look in its launch file on github to see how)
+> Reset if xbee goes to sleep
+
