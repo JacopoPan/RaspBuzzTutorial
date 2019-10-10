@@ -19,7 +19,10 @@ The tutorial contains 4 steps:
 4. run a 2-device demo.
 
 If you have further questions about this tutorial, contact <jacopo.panerati@robotics.utias.utoronto.ca> or <benjamin.ramtoula@polymtl.ca>.
-If you have further questions about [ROSBuzz](https://github.com/MISTLab/ROSBuzz) or [XBeeMav](https://github.com/MISTLab/XbeeMav), contact <david.st-onge@etsmtl.ca> or <vivek-shankar.varadharajan@polymtl.ca>. If you have further questions about [Buzz](https://github.com/MISTLab/Buzz/), contact <giovanni.beltrame@polymtl.ca> or <cpinciroli@wpi.edu>.
+
+If you have further questions about [ROSBuzz](https://github.com/MISTLab/ROSBuzz) or [XBeeMav](https://github.com/MISTLab/XbeeMav), contact <david.st-onge@etsmtl.ca> or <vivek-shankar.varadharajan@polymtl.ca>. 
+
+If you have further questions about [Buzz](https://github.com/MISTLab/Buzz/), contact <giovanni.beltrame@polymtl.ca> or <cpinciroli@wpi.edu>.
 
 
 
