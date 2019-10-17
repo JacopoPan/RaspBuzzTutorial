@@ -197,3 +197,8 @@ More examples on the use of the Buzz language are available in its [wiki](https:
 
 > Troubleshooting: if an XBee module becomes irresponsive, press the reset button on the interface board.
 
+
+
+# What's Next
+
+lorem ipsum
