@@ -50,7 +50,7 @@ File `profile_A007_sseac.xpro` in folder `RaspBuzzTutorial` should be uploaded t
 11. navigate to file `profile_A007_sseac.xpro`, click on "Open"
 12. the profile will be loaded to the SX 868
 
-A similar profile for the XBee PRO is also available in this [repository](http://git.mistlab.ca/bramtoula/spiri-resources.git)
+A similar profile for the 900MHz [XBee PRO](https://www.digi.com/products/embedded-systems/digi-xbee/rf-modules/sub-1-ghz-modules/xbee-pro-900hp), `profile_A007_sseac-PRO.xpro`, is also available in this repository.
 
 
 
