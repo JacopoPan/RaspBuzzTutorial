@@ -199,6 +199,6 @@ More examples on the use of the Buzz language are available in its [wiki](https:
 
 
 
-# What's Next
+# What's next
 
 lorem ipsum
