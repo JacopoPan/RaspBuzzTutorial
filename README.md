@@ -35,7 +35,7 @@ $ git clone https://github.com/JacopoPan/RaspBuzzTutorial.git
 $ cd RaspBuzzTutorial/
 ```
 
-File `profile_A007_sseac.xpro` in folder `RaspBuzzTutorial` should be uploaded to each of your [XBee SX 868](https://www.digi.com/products/embedded-systems/digi-xbee/rf-modules/sub-1-ghz-modules/digi-xbee-sx-868) radios using the following steps:
+The configuration file `profile_A007_sseac.xpro` in folder `RaspBuzzTutorial` should be uploaded to each of your [XBee SX 868](https://www.digi.com/products/embedded-systems/digi-xbee/rf-modules/sub-1-ghz-modules/digi-xbee-sx-868) radios using the following steps:
 
 1. install Digi's [XCTU](https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu#productsupport-utilities) (tested with XCTU 6.4.3 on OS X Mojave and Ubuntu 16.04)
 2. connect your XBee SX 868 to the machine running XCTU through USB (using, for example, the interface board included in the development kit, part: [XK8X-DMS-0](https://www.digikey.com/product-detail/en/digi-international/XK8X-DMS-0/602-2117-ND/))
