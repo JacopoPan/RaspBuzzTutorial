@@ -201,4 +201,4 @@ More examples on the use of the Buzz language are available in its [wiki](https:
 
 # What's next
 
-lorem ipsum
+The future developer willing to access Buzz's VM state `bvm` or extend the functionalities of `ROSBuzz` could start by looking at the main loop run by the node in method [`roscontroller::RosControllerRun()`](https://github.com/JacopoPan/ROSBuzz/blob/master/src/roscontroller.cpp#L109).
