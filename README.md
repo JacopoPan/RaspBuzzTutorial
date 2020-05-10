@@ -172,7 +172,7 @@ and, for each new XBee module, add a new line in the form:
 - Perform steps 2-3 on 2 Raspberry Pi 3 Model B+
 - Connect each of the 2 Pis to a Digi XBee SX (e.g., again using an interface board and USB) loaded with the profile from step 1
 
-Using the sources from `https://github.com/JacopoPan/ROSBuzz` you shuold run:
+Using the sources from `https://github.com/JacopoPan/ROSBuzz` you should run:
 
 ```
 $ roslaunch rosbuzz neil.launch
